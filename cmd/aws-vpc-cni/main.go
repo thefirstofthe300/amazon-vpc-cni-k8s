@@ -422,6 +422,7 @@ func _main() int {
 	ipamdDaemon := exec.Command(cmd)
 	ipamdDaemon.Stdout = os.Stdout
 	ipamdDaemon.Stderr = os.Stderr
+	ipamdDaemon.Env = os.Environ()
 
 	err = ipamdDaemon.Start()
 	if err != nil {
